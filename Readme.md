@@ -10,13 +10,13 @@ Student[] students = new NetWorkCall<Students[]>().GET("http://example.com/api/g
 Post request
 
 StudentRequestViewModel model = new StudentRequestViewModel { name = "jabu" };
-Student students = new NetWorkCall<Student>().POST("http://example.com/api/addstudent",JsonConvert.SerializeObject(model));
+Student students = new NetWorkCall<Student>().POST("http://example.com/api/addstudent",model);
 
 
 Put request
 
 StudentRequestViewModel model = new StudentRequestViewModel {id = 1, name = "jabu" };
-Student students = new NetWorkCall<Student>().PUT("http://example.com/api/updatestudent",JsonConvert.SerializeObject(model));
+Student students = new NetWorkCall<Student>().PUT("http://example.com/api/updatestudent",model);
 
 
 Delete request
