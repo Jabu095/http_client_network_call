@@ -5,20 +5,20 @@ Example usage:
 ```csharp
 Get request
 
-Students[] students = new NetWorkCall<Students[]>().GET("http://example.com?id=2");
+Student[] students = new NetWorkCall<Students[]>().GET("http://example.com/api/getstudent?id=2");
 
 Post request
 
 StudentRequestViewModel model = new StudentRequestViewModel { name = "jabu" };
-Students[] students = new NetWorkCall<Students[]>().POST("http://example.com",JsonConvert.SerializeObject(model));
+Students students = new NetWorkCall<Students[]>().POST("http://example.com/api/addstudent",JsonConvert.SerializeObject(model));
 
 
 Put request
 
 StudentRequestViewModel model = new StudentRequestViewModel {id = 1, name = "jabu" };
-Students[] students = new NetWorkCall<Students[]>().PUT("http://example.com",JsonConvert.SerializeObject(model));
+Students students = new NetWorkCall<Students[]>().PUT("http://example.com/api/updatestudent",JsonConvert.SerializeObject(model));
 
 
 Delete request
 
-Students[] students = new NetWorkCall<Students[]>().PUT("http://example.com?id=4");
+bool students = new NetWorkCall<bool>().PUT("http://example.com/api/removestudent?id=4");
