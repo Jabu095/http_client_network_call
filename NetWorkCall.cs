@@ -39,13 +39,13 @@ namespace NetworkCalls
         /// <param name="url">The URL.</param>
         /// <param name="jsonData">The json data.</param>
         /// <returns></returns>
-        public T POST(string url, string jsonData)
+        public T POST(string url, object jsonData)
         {
             try
             {
                 using (var client = new HttpClient())
                 {
-                    var response = client.PostAsync(url, new StringContent(jsonData, Encoding.UTF8, "application/json")).Result;
+                    var response = client.PostAsync(url, new StringContent(JsonConvert.SerializeObject(jsonData), Encoding.UTF8, "application/json")).Result;
                     var responseBody = response.Content.ReadAsStringAsync().Result;
                     if (response.IsSuccessStatusCode)
                     {
@@ -66,13 +66,13 @@ namespace NetworkCalls
         /// <param name="url">the url</param>
         /// <param name="jsonData">string jsonData</param>
         /// <returns></returns>
-        public T PUT(string url, string jsonData)
+        public T PUT(string url, object jsonData)
         {
             try
             {
                 using (var client = new HttpClient())
                 {
-                    var response = client.PutAsync(url, new StringContent(jsonData, Encoding.UTF8, "application/json")).Result;
+                    var response = client.PutAsync(url, new StringContent(JsonConvert.SerializeObject(jsonData), Encoding.UTF8, "application/json")).Result;
                     var responseBody = response.Content.ReadAsStringAsync().Result;
                     if (response.IsSuccessStatusCode)
                     {
