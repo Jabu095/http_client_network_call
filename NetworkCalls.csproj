@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <PackageId>http_client_network_call</PackageId>
+    <Authors>Jabulani Madzivadondo</Authors>
+    <Company>Smartmacmane</Company>
+    <Description>this package enables a user to perform a network calls getting the required desirielised object</Description>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+</Project>
