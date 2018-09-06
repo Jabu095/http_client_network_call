@@ -23,4 +23,4 @@ Student students = new NetWorkCall<Student>().PUT("http://example.com/api/update
 
 Delete request
 
-bool students = new NetWorkCall<bool>().PUT("http://example.com/api/removestudent?id=4");
+bool students = new NetWorkCall<bool>().DELETE("http://example.com/api/removestudent?id=4");
